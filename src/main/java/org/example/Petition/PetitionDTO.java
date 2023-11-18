@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.example.category.Category;
+import org.example.category.Categories;
 import org.example.receiver.Receiver;
 import org.example.user.UserDTO;
 
@@ -27,7 +27,7 @@ public class PetitionDTO {
     private String status;
     private List<UserDTO> signers;
     private String deadLine;
-    private List<Category> categories;
+    private List<Categories> categories;
 
     public static PetitionDTO mapPetitionToDTO(Petition petition) {
         PetitionDTO petitionDTO = new PetitionDTO();

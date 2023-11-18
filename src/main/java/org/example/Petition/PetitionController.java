@@ -20,8 +20,13 @@ public class PetitionController {
         this.petitionService = petitionService;
     }
     @GetMapping
-    public ResponseEntity<List<PetitionDTO>> getAllPetitions() {
-        List<PetitionDTO> petitions = petitionService.getAllPetitions().stream()
+    public ResponseEntity<List<PetitionDTO>> getAllPetitions(
+            @RequestParam(required = false) List<Integer> category_ids,
+            @RequestParam(required = false) String status,
+            @RequestParam(required = false) Integer region,
+            @RequestParam(required = false) String search
+    ) {
+        List<PetitionDTO> petitions = petitionService.getPetitionsWithFilter(category_ids, status, region, search).stream()
                 .map(PetitionDTO::mapPetitionToDTO)
                 .collect(Collectors.toList());
         return ResponseEntity.ok(petitions);

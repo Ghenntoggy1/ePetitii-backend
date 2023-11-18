@@ -6,10 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.Petition.Petition;
-import org.example.category.Category;
-import org.example.user.User;
-
-import java.util.Date;
+import org.example.category.Categories;
 
 @Data
 @Builder
@@ -27,5 +24,5 @@ public class Category_Petition {
     private Petition petition_id;
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "category_id")
-    private Category category_id;
+    private Categories categories_id;
 }

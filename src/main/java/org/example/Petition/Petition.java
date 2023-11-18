@@ -7,7 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.Location.Location;
-import org.example.category.Category;
+import org.example.category.Categories;
 import org.example.receiver.Receiver;
 import org.example.user.User;
 
@@ -52,7 +52,7 @@ public class Petition {
             name = "Category_Petition",
             joinColumns = @JoinColumn(name = "petition_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
-    private Set<Category> categories = new HashSet<>();
+    private Set<Categories> categories = new HashSet<>();
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
