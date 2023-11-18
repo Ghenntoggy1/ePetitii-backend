@@ -50,6 +50,7 @@ public class Petition {
     private Set<User> signers = new HashSet<>();
     private String deadLine;
     @ManyToMany
+    
     @JoinTable(
             name = "petition_category",
             joinColumns = @JoinColumn(name = "petition_id"),
