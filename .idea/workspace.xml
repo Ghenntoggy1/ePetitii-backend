@@ -124,19 +124,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added petition endpoints" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionDTO.java</url>
-          <line>31</line>
-          <properties class="org.example.Petition.PetitionDTO">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.example.Petition.Petition" memberName="signers" />
