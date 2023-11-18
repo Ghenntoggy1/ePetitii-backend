@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,11 +25,25 @@ public class PetitionController {
             @RequestParam(required = false) List<Integer> category_ids,
             @RequestParam(required = false) String status,
             @RequestParam(required = false) Integer region,
-            @RequestParam(required = false) String search
+            @RequestParam(required = false) String search,
+            @RequestParam(required = false) String sortBy
     ) {
         List<PetitionDTO> petitions = petitionService.getPetitionsWithFilter(category_ids, status, region, search).stream()
                 .map(PetitionDTO::mapPetitionToDTO)
                 .collect(Collectors.toList());
+        if (sortBy != null && !sortBy.isEmpty()) {
+            switch (sortBy) {
+                case "new":
+                    petitions.sort(Comparator.comparing(PetitionDTO::getDate).reversed());
+                    break;
+                case "popular":
+                    petitions.sort(Comparator.comparingInt(PetitionDTO::getCurrSigns).reversed());
+                    break;
+                default:
+                    petitions.sort(Comparator.comparing(PetitionDTO::getDate).reversed());
+                    break;
+            }
+        }
         return ResponseEntity.ok(petitions);
     }
 
