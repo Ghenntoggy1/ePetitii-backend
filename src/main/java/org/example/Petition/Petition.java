@@ -61,7 +61,4 @@ public class Petition {
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     @JsonManagedReference
     private Set<User> signers = new HashSet<>();
-
-
-
 }

@@ -26,9 +26,9 @@ public class PetitionService {
     public Optional<Petition> getPetitionById(Integer petitionId) {
         return petitionRepository.findById(petitionId);
     }
-    public boolean signPetition(Integer petitionId, String userIcnp) throws DuplicateSignException, NotFoundException {
+    public boolean signPetition(Integer petitionId, String userIdnp) throws DuplicateSignException, NotFoundException {
         Optional<Petition> optionalPetition = petitionRepository.findById(petitionId);
-        Optional<User> optionalUser = userRepository.findByIdnp(userIcnp);
+        Optional<User> optionalUser = userRepository.findByIdnp(userIdnp);
 
         if (optionalPetition.isPresent() && optionalUser.isPresent()) {
             Petition petition = optionalPetition.get();
