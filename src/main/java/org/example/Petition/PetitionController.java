@@ -48,4 +48,11 @@ public class PetitionController {
                     .body("Failed to sign petition");
         }
     }
+
+    @PostMapping("/create")
+    public ResponseEntity<Integer> createPetition(@RequestBody PetitionCreateRequest petitionCreateRequest) {
+        Integer petition_id = petitionService.createPetition(petitionCreateRequest);
+        return ResponseEntity.ok(petition_id);
+
+    }
 }

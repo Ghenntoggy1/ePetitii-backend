@@ -45,7 +45,7 @@ public class Petition {
     @ManyToOne
     @JoinColumn(name = "location_id", referencedColumnName = "location_id")
     private Location location;
-    private String deadLine;
+    private Date deadLine;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "Category_Petition",

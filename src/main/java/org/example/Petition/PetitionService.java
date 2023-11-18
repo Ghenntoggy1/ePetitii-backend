@@ -4,27 +4,35 @@ import jakarta.persistence.criteria.Join;
 import jakarta.persistence.criteria.JoinType;
 import org.example.CustomException.DuplicateSignException;
 import org.example.CustomException.NotFoundException;
+import org.example.Location.LocationRepository;
 import org.example.category.Categories;
+import org.example.category.CategoryRepository;
 import org.example.user.User;
 import org.example.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.example.Receiver.ReceiverRepository;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.function.Predicate;
+import java.time.LocalDate;
+import java.util.*;
 
 @Service
 public class PetitionService {
     private final PetitionRepository petitionRepository;
     private final UserRepository userRepository;
+    private final ReceiverRepository receiverRepository;
+    private final CategoryRepository categoryRepository;
+    private final LocationRepository locationRepository;
 
     @Autowired
-    public PetitionService(PetitionRepository petitionRepository, UserRepository userRepository) {
+    public PetitionService(PetitionRepository petitionRepository, UserRepository userRepository, ReceiverRepository receiverRepository
+    , CategoryRepository categoryRepository, LocationRepository locationRepository) {
         this.petitionRepository = petitionRepository;
         this.userRepository = userRepository;
+        this.receiverRepository = receiverRepository;
+        this.categoryRepository = categoryRepository;
+        this.locationRepository = locationRepository;
     }
     public static Specification<Petition> hasCategoryIds(List<Integer> categoryIds) {
         return (root, query, criteriaBuilder) -> {
@@ -101,5 +109,32 @@ public class PetitionService {
         } else {
             throw new NotFoundException("Petition or User not found");
         }
+    }
+
+    public Integer createPetition(PetitionCreateRequest petitionCreateRequest){
+        Petition petition = new Petition();
+        petition.setInitiator(userRepository.findByIdnp(petitionCreateRequest.getInitiator_idnp()).get());
+        petition.setName(petitionCreateRequest.getName());
+        petition.setDescription(petitionCreateRequest.getDescription());
+        petition.setReceiver(receiverRepository.findById(petitionCreateRequest.getReceiver()).get());
+        Set<Categories> categories = new HashSet<>();
+        for(Integer id : petitionCreateRequest.getCategories()){
+            categories.add(categoryRepository.findById(id).get());
+        }
+        petition.setCategories(categories);
+        petition.setCurrSigns(1);
+        petition.setNeededSigns(100);
+        petition.setStatus("pending_review");
+        petition.setLocation(locationRepository.findById(petitionCreateRequest.getRegion()).get());
+        LocalDate currentDate = LocalDate.now();
+        petition.setDate(java.sql.Date.valueOf(currentDate));
+        petition.setDeadLine(java.sql.Date.valueOf(currentDate.plusDays(30)));
+        petition.setSigners(new HashSet<>(){
+            {
+                add(userRepository.findByIdnp(petitionCreateRequest.getInitiator_idnp()).get());
+            }
+        });
+        petitionRepository.save(petition);
+        return petition.getPetition_id();
     }
 }

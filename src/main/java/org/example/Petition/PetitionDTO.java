@@ -26,7 +26,7 @@ public class PetitionDTO {
     private Receiver receiver;
     private String status;
     private List<UserDTO> signers;
-    private String deadLine;
+    private Date deadLine;
     private List<Categories> categories;
 
     public static PetitionDTO mapPetitionToDTO(Petition petition) {
