@@ -31,12 +31,7 @@ public class PetitionController {
                 .collect(Collectors.toList());
         return ResponseEntity.ok(petitions);
     }
-    @GetMapping("/{petitionId}")
-    public ResponseEntity<PetitionDTO> getPetitionById(@PathVariable Integer petitionId) {
-        PetitionDTO petitionDTO =  petitionService.getPetitionById(petitionId)
-                .map(PetitionDTO::mapPetitionToDTO).get();
-        return ResponseEntity.ok(petitionDTO);
-    }
+
     @PostMapping("/{petitionId}/sign")
     public ResponseEntity<String> signPetition(@PathVariable Integer petitionId, @RequestBody SignPetitionRequest signRequest) throws DuplicateSignException, NotFoundException {
         boolean success = petitionService.signPetition(petitionId, signRequest.getUser_idnp());
@@ -54,5 +49,11 @@ public class PetitionController {
         Integer petition_id = petitionService.createPetition(petitionCreateRequest);
         return ResponseEntity.ok(petition_id);
 
+    }
+
+    @GetMapping("/{petition_id}/translate")
+    public ResponseEntity<PetitionDTO> translatePetition(@PathVariable Integer petition_id, @RequestBody PetitionTranslateRequest translatePetitionRequest) throws Exception {
+
+        return ResponseEntity.ok(petitionService.getPetitionById(petition_id, translatePetitionRequest.getLocale()));
     }
 }

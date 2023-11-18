@@ -7,6 +7,7 @@ import org.example.CustomException.NotFoundException;
 import org.example.Location.LocationRepository;
 import org.example.category.Categories;
 import org.example.category.CategoryRepository;
+import org.example.deepL.TranslatorClass;
 import org.example.user.User;
 import org.example.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,8 +87,13 @@ public class PetitionService {
     public List<Petition> getAllPetitions() {
         return petitionRepository.findAll();
     }
-    public Optional<Petition> getPetitionById(Integer petitionId) {
-        return petitionRepository.findById(petitionId);
+    public PetitionDTO getPetitionById(Integer petitionId, String locale) throws Exception {
+        Petition petition =  petitionRepository.findById(petitionId).get();
+        TranslatorClass translatorClass = new TranslatorClass();
+        PetitionDTO petitionDTO = PetitionDTO.mapPetitionToDTO(petition);
+        petitionDTO.setName(translatorClass.translate(petitionDTO.getName(), locale).getText());
+        petitionDTO.setDescription(translatorClass.translate(petitionDTO.getDescription(), locale).getText());
+        return petitionDTO;
     }
     public boolean signPetition(Integer petitionId, String userIcnp) throws DuplicateSignException, NotFoundException {
         Optional<Petition> optionalPetition = petitionRepository.findById(petitionId);
@@ -137,4 +143,7 @@ public class PetitionService {
         petitionRepository.save(petition);
         return petition.getPetition_id();
     }
+
+
+
 }

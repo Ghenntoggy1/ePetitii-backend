@@ -10,4 +10,7 @@ import java.util.List;
 @Repository
 public interface PetitionRepository extends JpaRepository<Petition, Integer> {
     List<Petition> findAll(Specification<Petition> specification);
+
+    @Query("")
+    List<Petition> findTopByPopularity();
 }
