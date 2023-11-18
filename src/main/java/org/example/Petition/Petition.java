@@ -8,9 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.Location.Location;
 import org.example.category.Categories;
-import org.example.receiver.Receiver;
 import org.example.user.User;
-
+import org.example.Receiver.Receiver;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;

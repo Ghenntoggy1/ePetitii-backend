@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.category.Categories;
-import org.example.receiver.Receiver;
+import org.example.Receiver.Receiver;
 import org.example.user.UserDTO;
 
 import java.util.Date;
