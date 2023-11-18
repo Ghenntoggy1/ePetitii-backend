@@ -13,11 +13,24 @@ public interface PetitionRepository extends JpaRepository<Petition, Integer> {
     List<Petition> findAll(Specification<Petition> specification);
 
     @Query(value =
-            "SELECT DISTINCT TOP 3 p.* " +
-                    "FROM Petitions p " +
-                    "JOIN Category_Petition cp ON p.petition_id = cp.petition_id " +
-                    "JOIN Categories c ON cp.category_id = c.category_id " +
-                    "WHERE c.category_id IN :categoryIds " +
-                    "ORDER BY p.date DESC", nativeQuery = true)
+            "WITH RankedPetitions AS (" +
+                    "    SELECT  " +
+                    "        p.*, " +
+                    "        ROW_NUMBER() OVER (ORDER BY p.date) AS petition_rank " +
+                    "    FROM " +
+                    "        Petitions p " +
+                    "        INNER JOIN Category_Petition cp ON p.petition_id = cp.petition_id " +
+                    "        INNER JOIN Categories c ON cp.category_id = c.category_id " +
+                    "    WHERE " +
+                    "        c.category_id IN :categoryIds  " +
+                    ")" +
+                    "SELECT DISTINCT " +
+                    "    * " +
+                    "FROM " +
+                    "    RankedPetitions " +
+                    "WHERE " +
+                    "    petition_rank <= 5 " +
+                    "ORDER BY " +
+                    "    date;", nativeQuery = true)
     List<Petition> findTop3PetitionsByCategoryIds(@Param("categoryIds") List<Integer> categoryIds);
 }
