@@ -6,8 +6,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.Petition.Petition;
 
 import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Builder
@@ -30,6 +32,6 @@ public class Category {
     @Column(name = "category_name_ru")
     private String category_name_ru;
 
-    @ManyToMany(mappedBy = "petition_id")
+    @ManyToMany(mappedBy = "categories")
     private Set<Petition> petitii = new HashSet<>();
 }
