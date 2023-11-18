@@ -3,7 +3,6 @@ package org.example.Petition;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -29,7 +28,7 @@ public interface PetitionRepository extends JpaRepository<Petition, Integer> {
                     "FROM " +
                     "    RankedPetitions " +
                     "WHERE " +
-                    "    petition_rank <= 5 " +
+                    "    petition_rank <= 3 " +
                     "ORDER BY " +
                     "    date;", nativeQuery = true)
     List<Petition> findTop3PetitionsByCategoryIds(List<Integer> categoryIds);
