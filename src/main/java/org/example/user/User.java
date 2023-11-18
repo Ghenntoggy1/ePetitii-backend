@@ -5,15 +5,18 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.Petition.Petition;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+@Entity
+@Table(name = "User1")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "User")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,4 +37,6 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private Role role;
+    @ManyToMany(mappedBy = "signers")
+    private Set<Petition> petitions = new HashSet<>();
 }

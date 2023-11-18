@@ -22,18 +22,29 @@ public class Petition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User initiator;
+    @Column(name = "[name]")
     private String name;
+    @Column(name = "date")
     private Date date;
+    @Column(name = "currSigns")
     private int currSigns;
+    @Column(name = "currSigns")
     private int neededSigns;
+    @Column(name = "[description]")
     private String description;
-    private String reciver;
-    private String statut;
+    @ManyToOne
+    @JoinColumn(name = "receiver_id", referencedColumnName= "receiver_id")
+    private Receiver receiver;
+    @Column(name = "status")
+    private String status;
+    @Column(name = "location")
+    private String location;
     @ManyToMany
     @JoinTable(
-            name = "user_petition",
+            name = "User_Petition",
             joinColumns = @JoinColumn(name = "petition_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<User> signers = new HashSet<>();
