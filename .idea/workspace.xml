@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caccb8a8-970f-4af3-aa1f-8d05d98e93ee" name="Changes" comment="implement DeepL">
+    <list default="true" id="caccb8a8-970f-4af3-aa1f-8d05d98e93ee" name="Changes" comment="add cors config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/email/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/email/EmailController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/email/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/email/EmailServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +83,7 @@
       <updated>1700304171558</updated>
       <workItem from="1700307674698" duration="48000" />
       <workItem from="1700332409769" duration="1251000" />
+      <workItem from="1700349427948" duration="503000" />
     </task>
     <task id="LOCAL-00001" summary="Init repository">
       <option name="closed" value="true" />
@@ -136,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700327113887</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add cors config">
+      <option name="closed" value="true" />
+      <created>1700345504341</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700345504341</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,7 +154,8 @@
     <MESSAGE value="Changed Petitions" />
     <MESSAGE value="Added petition endpoints" />
     <MESSAGE value="Changed petition many to many configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed petition many to many configuration" />
+    <MESSAGE value="add cors config" />
+    <option name="LAST_COMMIT_MESSAGE" value="add cors config" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

@@ -52,7 +52,7 @@ public class EmailServiceImpl implements EmailService{
 
     private String buildEmailContent(List<Petition> latestPetitions){
         StringBuilder content = new StringBuilder();
-        String petitionURL = "http://localhost:8080/api/petitions/";
+        String petitionURL = "http://172.20.115.183:3000/petitions/";
 
         content.append(" Hey! \nCheck some of the latest petitions you might be interested in: \n");
         for(Petition petition: latestPetitions){
