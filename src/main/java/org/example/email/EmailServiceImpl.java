@@ -2,6 +2,7 @@ package org.example.email;
 
 import org.example.Petition.Petition;
 import org.example.Petition.PetitionRepository;
+import org.example.Petition.PetitionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
@@ -16,7 +17,7 @@ public class EmailServiceImpl implements EmailService{
     @Autowired
     private JavaMailSender javaMailSender;
     @Autowired
-    private PetitionRepository petitionRepository;
+    private PetitionService petitionService;
 
     @Value("${spring.mail.username}")
     private String sender;
@@ -25,7 +26,7 @@ public class EmailServiceImpl implements EmailService{
     {
 
         try {
-            List<Petition> latestPetitions = petitionRepository.findAll();
+            List<Petition> latestPetitions = petitionService.getTop3PetitionsByCategoryIds(details.getCategories());
             String emailContent = buildEmailContent(latestPetitions);
 
             SimpleMailMessage mailMessage
@@ -42,6 +43,8 @@ public class EmailServiceImpl implements EmailService{
         }
 
         catch (Exception e) {
+            e.printStackTrace();  // Log the exception to understand the root cause
+
             return "Error while Sending Mail";
         }
 
@@ -51,10 +54,10 @@ public class EmailServiceImpl implements EmailService{
         StringBuilder content = new StringBuilder();
         String petitionURL = "http://localhost:8080/api/petitions/";
 
-        content.append("Hey! \n\n Check some of the latest petitions you might be interested in: \n");
+        content.append(" Hey! \nCheck some of the latest petitions you might be interested in: \n");
         for(Petition petition: latestPetitions){
-            content.append(petition.getName() + "\n" + "already sign by: " + petition.getCurrSigns()
-            + " people \n" + "sign it here: " + petitionURL+petition.getPetition_id()  + "\n\n");
+            content.append(petition.getName() + " - " + "Already signed by: " + petition.getCurrSigns()
+            + " people \n" + "Sign it too here: " + petitionURL+petition.getPetition_id()  + "\n\n");
         }
         return content.toString();
     }

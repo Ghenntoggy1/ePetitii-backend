@@ -20,7 +20,7 @@ public class EmailController {
     @Autowired
     private PetitionService petitionService;
 
-    @PostMapping("/sendMail")
+    @PostMapping("/sendEmail")
     public String sendEmail(@RequestBody EmailDetails emailDetails) {
         return emailService.sendMail(emailDetails);
     }

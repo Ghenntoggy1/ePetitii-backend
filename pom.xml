@@ -14,6 +14,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <property name="hibernate.ejb.metamodel.generation" value="enabled"/>
     </properties>
+
+
     <dependencies>
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
@@ -93,6 +95,7 @@
             <artifactId>deepl-java</artifactId>
             <version>1.4.0</version>
         </dependency>
-
     </dependencies>
+
+
 </project>
