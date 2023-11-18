@@ -1,6 +1,9 @@
 package org.example.Petition;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,6 +21,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Builder
 @Data
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "petition_id")
 @Entity
 @Table(name = "Petitions")
 public class Petition {
@@ -51,6 +55,8 @@ public class Petition {
             name = "Category_Petition",
             joinColumns = @JoinColumn(name = "petition_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
+    @JsonIgnoreProperties("petitions")
+    @JsonManagedReference // Add this annotation
     private Set<Categories> categories = new HashSet<>();
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

@@ -2,6 +2,7 @@ package org.example.category;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -37,7 +38,7 @@ public class Categories {
 
     @ManyToMany(mappedBy = "categories")
     @JsonBackReference
-    @JsonManagedReference
+    @JsonIgnoreProperties("categories")
     private Set<Petition> petitions = new HashSet<>();
     @Override
     public int hashCode() {

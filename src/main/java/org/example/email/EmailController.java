@@ -1,12 +1,14 @@
 package org.example.email;
 
 import org.example.Petition.Petition;
+import org.example.Petition.PetitionDTO;
 import org.example.Petition.PetitionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/email")
@@ -24,9 +26,8 @@ public class EmailController {
     }
 
     @GetMapping("/subscribe")
-    public ResponseEntity<List<Petition>> getTop3PetitionsByCategoryId(@RequestBody EmailDetails emailDetails) {
-        List<Petition> emailPetitions = petitionService.getTop3PetitionsByCategoryIds(emailDetails.getCategories());
-
+    public ResponseEntity<List<PetitionDTO>> getTop3PetitionsByCategoryId(@RequestBody EmailDetails emailDetails) {
+        List<PetitionDTO> emailPetitions = petitionService.getTop3PetitionsByCategoryIds(emailDetails.getCategories()).stream().map(PetitionDTO::mapPetitionToDTO).collect(Collectors.toList());
         return ResponseEntity.ok(emailPetitions);
     }
 }

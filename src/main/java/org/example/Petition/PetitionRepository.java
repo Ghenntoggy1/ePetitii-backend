@@ -22,7 +22,7 @@ public interface PetitionRepository extends JpaRepository<Petition, Integer> {
                     "        INNER JOIN Category_Petition cp ON p.petition_id = cp.petition_id " +
                     "        INNER JOIN Categories c ON cp.category_id = c.category_id " +
                     "    WHERE " +
-                    "        c.category_id IN :categoryIds  " +
+                    "        c.category_id IN (?1)  " +
                     ")" +
                     "SELECT DISTINCT " +
                     "    * " +
@@ -32,5 +32,5 @@ public interface PetitionRepository extends JpaRepository<Petition, Integer> {
                     "    petition_rank <= 5 " +
                     "ORDER BY " +
                     "    date;", nativeQuery = true)
-    List<Petition> findTop3PetitionsByCategoryIds(@Param("categoryIds") List<Integer> categoryIds);
+    List<Petition> findTop3PetitionsByCategoryIds(List<Integer> categoryIds);
 }
