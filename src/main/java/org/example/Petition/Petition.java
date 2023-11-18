@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.category.Category;
+import org.example.receiver.Receiver;
 import org.example.user.User;
 
 import java.util.Date;
@@ -31,7 +32,7 @@ public class Petition {
     private Date date;
     @Column(name = "currSigns")
     private int currSigns;
-    @Column(name = "currSigns")
+    @Column(name = "neededSigns")
     private int neededSigns;
     @Column(name = "[description]")
     private String description;
