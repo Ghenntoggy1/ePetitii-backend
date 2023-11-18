@@ -16,7 +16,7 @@ public class CategoryDTO {
     private String name;
     private Map<String, String> i18n;
 
-    public static CategoryDTO mapCategoryToDTO(Category category) {
+    public static CategoryDTO mapCategoryToDTO(Categories category) {
         HashMap<String, String> map = new HashMap<>();
         map.put("ro", category.getCategory_name_ro());
         map.put("en", category.getCategory_name_en());
