@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.example.Receiver.ReceiverRepository;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -144,6 +145,7 @@ public class PetitionService {
         return petition.getPetition_id();
     }
 
-
-
+    public List<Petition> getTop3PetitionsByCategoryIds(List<Integer> categoryIds) {
+        return petitionRepository.findTop3PetitionsByCategoryIds(categoryIds);
+    }
 }
