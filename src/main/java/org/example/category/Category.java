@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import org.example.Petition.Petition;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
@@ -41,5 +42,8 @@ public class Category {
     public int hashCode() {
         return Objects.hash(category_id, category_name_ro, category_name_en, category_name_ru);
     }
+
+    @Transient
+    private Map<String,String> i18n;
 
 }
