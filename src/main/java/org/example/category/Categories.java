@@ -19,7 +19,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 @Table(name = "Categories")
-public class Category {
+public class Categories {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "category_id")
@@ -41,5 +41,6 @@ public class Category {
     public int hashCode() {
         return Objects.hash(category_id, category_name_ro, category_name_en, category_name_ru);
     }
+
 
 }

@@ -7,10 +7,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.Location.Location;
-import org.example.category.Category;
-import org.example.Receiver.Receiver;
+import org.example.category.Categories;
 import org.example.user.User;
-
+import org.example.Receiver.Receiver;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -46,13 +45,13 @@ public class Petition {
     @ManyToOne
     @JoinColumn(name = "location_id", referencedColumnName = "location_id")
     private Location location;
-    private String deadLine;
+    private Date deadLine;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "Category_Petition",
             joinColumns = @JoinColumn(name = "petition_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
-    private Set<Category> categories = new HashSet<>();
+    private Set<Categories> categories = new HashSet<>();
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
