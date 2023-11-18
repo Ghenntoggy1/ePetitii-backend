@@ -10,6 +10,7 @@ import org.example.Petition.Petition;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -43,4 +44,11 @@ public class User {
     private Role role;
     @ManyToMany(mappedBy = "signers")
     private Set<Petition> petitions = new HashSet<>();
+    @Override
+    public int hashCode() {
+        // Only include relevant fields in the hash code calculation
+        return Objects.hash(user_id, idnp, name, surname, birthDay, location, role);
+    }
+
+
 }

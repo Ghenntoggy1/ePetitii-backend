@@ -1,5 +1,6 @@
 package org.example.Petition;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -46,18 +47,21 @@ public class Petition {
     @JoinColumn(name = "location_id", referencedColumnName = "location_id")
     private Location location;
     private String deadLine;
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "User_Petition",
-            joinColumns = @JoinColumn(name = "petition_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private Set<User> signers = new HashSet<>();
-
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "Category_Petition",
             joinColumns = @JoinColumn(name = "petition_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     private Set<Category> categories = new HashSet<>();
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "User_Petition",
+            joinColumns = @JoinColumn(name = "petition_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
+    @JsonManagedReference
+    private Set<User> signers = new HashSet<>();
+
+
 
 }

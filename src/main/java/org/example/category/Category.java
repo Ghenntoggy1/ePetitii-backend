@@ -1,6 +1,7 @@
 package org.example.category;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +10,7 @@ import lombok.NoArgsConstructor;
 import org.example.Petition.Petition;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Data
@@ -33,5 +35,11 @@ public class Category {
     private String category_name_ru;
 
     @ManyToMany(mappedBy = "categories")
+    @JsonBackReference
     private Set<Petition> petitions = new HashSet<>();
+    @Override
+    public int hashCode() {
+        return Objects.hash(category_id, category_name_ro, category_name_en, category_name_ru);
+    }
+
 }
