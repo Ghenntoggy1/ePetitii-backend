@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caccb8a8-970f-4af3-aa1f-8d05d98e93ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/JoiningTables/Category_Petition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Petition/Petition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Petition/Petition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/category/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/category/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="caccb8a8-970f-4af3-aa1f-8d05d98e93ee" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,17 +33,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/dimul/IdeaProjects/ePetitii/src/main/java/org/example/Main.java&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "onboarding.tips.debug.path": "C:/Users/dimul/IdeaProjects/ePetitii/src/main/java/org/example/Main.java",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example.Petition" />
@@ -135,7 +129,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionDTO.java</url>
           <line>31</line>
-          <properties class="org.example.Petition.PetitionDTO" method="mapPetitionToDTO">
+          <properties class="org.example.Petition.PetitionDTO">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
