@@ -22,6 +22,7 @@ public class Category_Petition {
     @ManyToOne
     @JoinColumn(name = "petition_id", referencedColumnName = "petition_id")
     private Petition petition_id;
+
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "category_id")
     private Categories categories_id;

@@ -1,4 +1,4 @@
-package org.example.receiver;
+package org.example.Receiver;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
