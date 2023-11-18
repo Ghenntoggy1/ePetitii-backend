@@ -5,7 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.Location.Location;
 import org.example.category.Category;
+import org.example.receiver.Receiver;
 import org.example.user.User;
 
 import java.util.Date;
@@ -21,9 +23,9 @@ import java.util.Set;
 public class Petition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer petition_id;
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    @JoinColumn(name = "initiator_id", referencedColumnName = "user_id")
     private User initiator;
     @Column(name = "[name]")
     private String name;
@@ -31,7 +33,7 @@ public class Petition {
     private Date date;
     @Column(name = "currSigns")
     private int currSigns;
-    @Column(name = "currSigns")
+    @Column(name = "neededSigns")
     private int neededSigns;
     @Column(name = "[description]")
     private String description;
@@ -40,19 +42,20 @@ public class Petition {
     private Receiver receiver;
     @Column(name = "status")
     private String status;
-    @Column(name = "location")
-    private String location;
-    @ManyToMany
+    @ManyToOne
+    @JoinColumn(name = "location_id", referencedColumnName = "location_id")
+    private Location location;
+    private String deadLine;
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "User_Petition",
             joinColumns = @JoinColumn(name = "petition_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<User> signers = new HashSet<>();
-    private String deadLine;
-    @ManyToMany
-    
+
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-            name = "petition_category",
+            name = "Category_Petition",
             joinColumns = @JoinColumn(name = "petition_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     private Set<Category> categories = new HashSet<>();

@@ -33,5 +33,5 @@ public class Category {
     private String category_name_ru;
 
     @ManyToMany(mappedBy = "categories")
-    private Set<Petition> petitii = new HashSet<>();
+    private Set<Petition> petitions = new HashSet<>();
 }
