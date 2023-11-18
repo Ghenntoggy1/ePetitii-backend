@@ -1,7 +1,6 @@
 package org.example.email;
 
 import org.example.Petition.Petition;
-import org.example.Petition.PetitionRepository;
 import org.example.Petition.PetitionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
