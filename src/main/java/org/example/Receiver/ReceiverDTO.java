@@ -17,7 +17,7 @@ public class ReceiverDTO {
     private String name;
     private Map<String, String> i18n;
 
-    static ReceiverDTO mapFromReceiver(Receiver receiver) {
+    public static ReceiverDTO mapFromReceiver(Receiver receiver) {
         HashMap<String, String> map = new HashMap<>();
         map.put("ro", receiver.getReceiver_name_ro());
         map.put("ru", receiver.getReceiver_name_ru());

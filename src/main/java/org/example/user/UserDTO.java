@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.Location.Location;
+import org.example.Location.LocationDTO;
 
 import java.util.Date;
 import java.util.List;
@@ -21,7 +22,7 @@ public class UserDTO {
     private String name;
     private String surname;
     private String idnp;
-    private Location region;
+    private LocationDTO region;
     private Date birthDay;
 
 
@@ -31,7 +32,7 @@ public class UserDTO {
         userDto.setName(user.getName());
         userDto.setSurname(user.getSurname());
         userDto.setBirthDay(user.getBirthDay());
-        userDto.setRegion(user.getLocation());
+        userDto.setRegion(LocationDTO.mapFromLocation(user.getLocation()));
         return userDto;
     }
     public static List<UserDTO> mapUsersToDTOs(Set<User> users) {

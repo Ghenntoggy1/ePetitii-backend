@@ -4,12 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.Receiver.ReceiverDTO;
 import org.example.category.Categories;
 import org.example.Receiver.Receiver;
+import org.example.category.CategoryDTO;
 import org.example.user.UserDTO;
 
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @Builder
@@ -23,11 +26,11 @@ public class PetitionDTO {
     private int currSigns;
     private int neededSigns;
     private String description;
-    private Receiver receiver;
+    private ReceiverDTO receiver;
     private String status;
     private List<UserDTO> signers;
     private Date deadLine;
-    private List<Categories> categories;
+    private List<CategoryDTO> categories;
 
     public static PetitionDTO mapPetitionToDTO(Petition petition) {
         PetitionDTO petitionDTO = new PetitionDTO();
@@ -38,11 +41,11 @@ public class PetitionDTO {
         petitionDTO.setCurrSigns(petition.getCurrSigns());
         petitionDTO.setNeededSigns(petition.getNeededSigns());
         petitionDTO.setDescription(petition.getDescription());
-        petitionDTO.setReceiver(petition.getReceiver());
+        petitionDTO.setReceiver(ReceiverDTO.mapFromReceiver(petition.getReceiver()));
         petitionDTO.setStatus(petition.getStatus());
         petitionDTO.setSigners(UserDTO.mapUsersToDTOs(petition.getSigners()));
         petitionDTO.setDeadLine(petition.getDeadLine());
-        petitionDTO.setCategories(petition.getCategories().stream().toList());
+        petitionDTO.setCategories(petition.getCategories().stream().map(CategoryDTO::mapCategoryToDTO).collect(Collectors.toList()));
         return petitionDTO;
     }
 }

@@ -4,65 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caccb8a8-970f-4af3-aa1f-8d05d98e93ee" name="Changes" comment="change ip host">
+    <list default="true" id="78daa2d7-8f28-4b0e-90a4-a8021e93a252" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Location/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Location/LocationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Location/LocationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Location/LocationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Receiver/ReceiverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Receiver/ReceiverController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Receiver/ReceiverDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Receiver/ReceiverDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/email/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/email/EmailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/UserDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="package-info" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
-  <component name="ProjectId" id="2YLU5UrgcgzfR95cRMebvrN6N5X" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "onboarding.tips.debug.path": "C:/Users/dimul/IdeaProjects/ePetitii/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Facets",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "spring.configuration.checksum": "1afa15513be544ce7bcecd1fc5579e46",
-    "vue.rearranger.settings.migration": "true"
+    "git-widget-placeholder": "master"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="org.example.Petition" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -72,109 +37,8 @@
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="caccb8a8-970f-4af3-aa1f-8d05d98e93ee" name="Changes" comment="" />
-      <created>1700304171558</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1700304171558</updated>
-      <workItem from="1700307674698" duration="48000" />
-      <workItem from="1700332409769" duration="1251000" />
-      <workItem from="1700349427948" duration="892000" />
-    </task>
-    <task id="LOCAL-00001" summary="Init repository">
-      <option name="closed" value="true" />
-      <created>1700304248255</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1700304248255</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Added Petition class">
-      <option name="closed" value="true" />
-      <created>1700310514832</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1700310514832</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Changed Petitions">
-      <option name="closed" value="true" />
-      <created>1700311654287</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1700311654287</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Changed Petitions">
-      <option name="closed" value="true" />
-      <created>1700311749520</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1700311749520</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Added petition endpoints">
-      <option name="closed" value="true" />
-      <created>1700322296830</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1700322296830</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Changed petition many to many configuration">
-      <option name="closed" value="true" />
-      <created>1700327113887</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1700327113887</updated>
-    </task>
-    <task id="LOCAL-00007" summary="add cors config">
-      <option name="closed" value="true" />
-      <created>1700345504341</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1700345504341</updated>
-    </task>
-    <task id="LOCAL-00008" summary="change ip host">
-      <option name="closed" value="true" />
-      <created>1700350246064</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1700350246064</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Init repository" />
-    <MESSAGE value="Added" />
-    <MESSAGE value="Added Petition class" />
-    <MESSAGE value="Changed Petitions" />
-    <MESSAGE value="Added petition endpoints" />
-    <MESSAGE value="Changed petition many to many configuration" />
-    <MESSAGE value="add cors config" />
-    <MESSAGE value="change ip host" />
-    <option name="LAST_COMMIT_MESSAGE" value="change ip host" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

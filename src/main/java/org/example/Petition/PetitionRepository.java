@@ -32,4 +32,5 @@ public interface PetitionRepository extends JpaRepository<Petition, Integer> {
                     "ORDER BY " +
                     "    date;", nativeQuery = true)
     List<Petition> findTop3PetitionsByCategoryIds(List<Integer> categoryIds);
+    List<Petition> findPetitionsBySigners_Idnp(String idnp);
 }

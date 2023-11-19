@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/api/petition")
 public class PetitionController {
@@ -31,6 +31,12 @@ public class PetitionController {
         List<PetitionDTO> petitions = petitionService.getPetitionsWithFilter(category_ids, status, region, search).stream()
                 .map(PetitionDTO::mapPetitionToDTO)
                 .collect(Collectors.toList());
+        if(status == null || status.isEmpty()) {
+            petitions = petitions.stream()
+                    .filter(petition -> !petition.getStatus().equalsIgnoreCase("pending_review"))
+                    .filter(petition -> !petition.getStatus().equalsIgnoreCase("rejected"))
+                    .collect(Collectors.toList());
+        }
         if (sortBy != null && !sortBy.isEmpty()) {
             switch (sortBy) {
                 case "new":
@@ -67,8 +73,22 @@ public class PetitionController {
     }
 
     @GetMapping("/{petition_id}/translate")
-    public ResponseEntity<PetitionDTO> translatePetition(@PathVariable Integer petition_id, @RequestBody PetitionTranslateRequest translatePetitionRequest) throws Exception {
+    public ResponseEntity<PetitionDTO> translatePetition(@PathVariable Integer petition_id, @RequestParam(required = false) String locale) throws Exception {
 
-        return ResponseEntity.ok(petitionService.getPetitionById(petition_id, translatePetitionRequest.getLocale()));
+        return ResponseEntity.ok(petitionService.getPetitionById(petition_id,locale));
     }
+    @GetMapping("/userpetition/{user_idnp}")
+    public ResponseEntity<List<PetitionDTO>> translatePetition(@PathVariable String user_idnp) {
+
+        List<PetitionDTO> signedPetitions = petitionService.getPetitionsSignedByUser(user_idnp).stream()
+                .map(PetitionDTO::mapPetitionToDTO)
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(signedPetitions);
+    }
+    @GetMapping("/delete/{petition_id}")
+    public void deletePetition(@PathVariable Integer petition_id){
+        petitionService.deletePetition(petition_id);
+    }
+
 }

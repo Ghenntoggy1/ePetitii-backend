@@ -17,7 +17,7 @@ public class LocationDTO {
     private String name;
     private Map<String, String> i18n;
 
-    static LocationDTO mapFromLocation(Location location) {
+    public static LocationDTO mapFromLocation(Location location) {
         HashMap<String, String> map = new HashMap<>();
         map.put("ro", location.getLocation_name_ro());
         map.put("ru", location.getLocation_name_ru());

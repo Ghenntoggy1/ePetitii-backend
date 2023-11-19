@@ -49,7 +49,7 @@ public class PetitionService {
     }
 
     public static Specification<Petition> hasRegionId(Integer regionId) {
-        return (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get(Petition_.location).get("region").get("location_id"), regionId);
+        return (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get(Petition_.location).get("location_id"), regionId);
     }
 
     public static Specification<Petition> hasSearchTerm(String searchTerm) {
@@ -60,7 +60,7 @@ public class PetitionService {
                 );
     }
 
-    public static Specification<Petition> buildSpecification(List<Integer> categoryIds, String status, Integer regionId, String searchTerm) {
+    public static Specification<Petition> buildSpecification(List<Integer> categoryIds, String status, Integer location_id, String searchTerm) {
         Specification<Petition> spec = Specification.where(null);
 
         if (categoryIds != null && !categoryIds.isEmpty()) {
@@ -71,8 +71,8 @@ public class PetitionService {
             spec = spec.and(hasStatus(status));
         }
 
-        if (regionId != null) {
-            spec = spec.and(hasRegionId(regionId));
+        if (location_id != null) {
+            spec = spec.and(hasRegionId(location_id));
         }
 
         if (searchTerm != null) {
@@ -81,8 +81,8 @@ public class PetitionService {
 
         return spec;
     }
-    public List<Petition> getPetitionsWithFilter(List<Integer> categoryIds, String status, Integer regionId, String searchTerm) {
-        Specification<Petition> spec = buildSpecification(categoryIds, status, regionId, searchTerm);
+    public List<Petition> getPetitionsWithFilter(List<Integer> categoryIds, String status, Integer location_id, String searchTerm) {
+        Specification<Petition> spec = buildSpecification(categoryIds, status, location_id, searchTerm);
         return petitionRepository.findAll(spec);
     }
     public List<Petition> getAllPetitions() {
@@ -147,5 +147,11 @@ public class PetitionService {
 
     public List<Petition> getTop3PetitionsByCategoryIds(List<Integer> categoryIds) {
         return petitionRepository.findTop3PetitionsByCategoryIds(categoryIds);
+    }
+    public void deletePetition(Integer petition_id){
+        petitionRepository.deleteById(petition_id);
+    }
+    public List<Petition> getPetitionsSignedByUser(String idnp) {
+        return petitionRepository.findPetitionsBySigners_Idnp(idnp);
     }
 }
