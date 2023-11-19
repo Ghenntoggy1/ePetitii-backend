@@ -4,28 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78daa2d7-8f28-4b0e-90a4-a8021e93a252" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Location/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Location/LocationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Location/LocationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Location/LocationDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Petition/PetitionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Receiver/ReceiverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Receiver/ReceiverController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Receiver/ReceiverDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Receiver/ReceiverDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/email/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/email/EmailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/user/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/user/UserDTO.java" afterDir="false" />
-    </list>
+    <list default="true" id="78daa2d7-8f28-4b0e-90a4-a8021e93a252" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "master",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="RunManager">

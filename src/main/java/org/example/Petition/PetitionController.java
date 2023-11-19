@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 public class PetitionController {
     private final PetitionService petitionService;
 
+
     @Autowired
     public PetitionController(PetitionService petitionService) {
         this.petitionService = petitionService;
@@ -86,7 +87,7 @@ public class PetitionController {
 
         return ResponseEntity.ok(signedPetitions);
     }
-    @GetMapping("/delete/{petition_id}")
+    @DeleteMapping("/delete/{petition_id}")
     public void deletePetition(@PathVariable Integer petition_id){
         petitionService.deletePetition(petition_id);
     }
